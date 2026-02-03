@@ -16,7 +16,6 @@ void main()
     printf("Enter position to delete (1 to %d): ", n);
     scanf("%d", &pos);
 
-    // shift elements to left
     for(i = pos - 1; i < n - 1; i++)
     {
         a[i] = a[i + 1];
