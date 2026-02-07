@@ -1,32 +1,21 @@
 #include <stdio.h>
 
+int fib(int n) {
+    if (n == 0)
+        return 0;
+    else if (n == 1)
+        return 1;
+    else
+        return fib(n - 1) + fib(n - 2);
+}
+
 int main() {
     int n;
 
-    printf("Enter number of elements: ");
+    printf("Enter a number: ");
     scanf("%d", &n);
 
-    if (n <= 0) {
-        printf("Array is empty.");
-        return 0;
-    }
-
-    int arr[n];
-
-    printf("Enter %d sorted elements:\n", n);
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
-    }
-
-    printf("Array after removing duplicates:\n");
-
-    printf("%d ", arr[0]);
-
-    for (int i = 1; i < n; i++) {
-        if (arr[i] != arr[i - 1]) {
-            printf("%d ", arr[i]);
-        }
-    }
+    printf("Fibonacci number at position %d is %d", n, fib(n));
 
     return 0;
 }
